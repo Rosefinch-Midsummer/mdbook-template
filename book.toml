@@ -1,0 +1,6 @@
+[book]
+authors = ["zhushunshui95"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Mdbook Template"
