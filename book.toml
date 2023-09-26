@@ -7,3 +7,5 @@ title = "Mdbook Template"
 [preprocessor.toc]
 command = "mdbook-toc"
 renderer = ["html"]
+[preprocessor.katex]
+after = ["links"]
