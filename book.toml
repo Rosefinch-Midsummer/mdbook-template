@@ -9,3 +9,11 @@ command = "mdbook-toc"
 renderer = ["html"]
 [preprocessor.katex]
 after = ["links"]
+
+[output.html]
+no-section-label = false
+
+[output.html.fold]
+enable = false
+level = 1
+
