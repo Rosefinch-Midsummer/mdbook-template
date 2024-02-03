@@ -12,21 +12,24 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
         with:
           mdbook-version: 'latest'
-      - uses: jontze/action-mdbook@v2
+      - uses: jontze/action-mdbook@v3
         with:
           token: ${{secrets.GITHUB_TOKEN}}
           use-toc: true
-          toc-version: "latest"
-          use-katex: true
-          mdbook-katex-version: "latest"
+          toc-version: 'latest'
           use-mermaid: true
-          mermaid-version: "latest"
+          mermaid-version: 'latest'
+      - name: Show toc version
+        run: mdbook-toc --version
+      - name: Show mermaid version
+        run: mdbook-mermaid --version
+        
 
       - run: mdbook build
 
